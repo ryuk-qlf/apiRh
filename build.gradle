@@ -1,0 +1,42 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'fr.facil'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'junit:junit:4.13.2'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.6.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'commons-net:commons-net:3.8.0'
+    implementation 'javax.xml.bind:jaxb-api-parent:2.4.0-b180830.0359'
+    implementation 'javax.xml.bind:jaxb-api-osgi:2.2.7'
+    testImplementation 'org.apache.httpcomponents:httpclient'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'net.sf.biweekly:biweekly:0.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+}
+
+test {
+    useJUnitPlatform()
+}
